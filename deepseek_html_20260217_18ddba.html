@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProCV Lebanon — expert CV writing in Lebanon</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Poppins (clean, modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #2d3e50;
+      background-color: #ffffff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e3c72; /* deep navy */
+    }
+
+    .logo i {
+      color: #2b5e3b; /* cedar green */
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d3e50;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #1e3c72;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1e3c72;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #2b4f8e;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #1e3c72;
+      color: #1e3c72;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .btn-outline:hover {
+      background-color: #1e3c72;
+      color: white;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #f8faff 0%, #eef3fc 100%);
+      padding: 4rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1e3c72;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 span {
+      color: #2b5e3b; /* cedar */
+      border-bottom: 3px solid #ce1126; /* lebanese red accent */
+      display: inline-block;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #2d3e50;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image i {
+      font-size: 15rem;
+      color: #b0c4de;
+      opacity: 0.5;
+    }
+
+    /* trusted section */
+    .trust-bar {
+      background: white;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid #eaeef5;
+    }
+
+    .trust-logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6c7a8d;
+      font-weight: 400;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-logos span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .trust-logos i {
+      color: #ce1126; /* red */
+    }
+
+    /* sections general */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #1e3c72;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #5f6f80;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+    }
+
+    /* services cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+      border: 1px solid #edf2f7;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0,0,0,0.05);
+    }
+
+    .service-icon {
+      background: #eaf0fd;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+    }
+
+    .service-icon i {
+      font-size: 2.5rem;
+      color: #1e3c72;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #1e3c72;
+    }
+
+    .service-card p {
+      color: #5f6f80;
+    }
+
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.2rem;
+      color: #3b4d5e;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ce1126;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #5f6f80;
+    }
+
+    .about-image i {
+      font-size: 14rem;
+      color: #ced9e9;
+    }
+
+    /* testimonials */
+    .testimonials {
+      background-color: #fafcff;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    }
+
+    .stars {
+      color: #f4b400;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #2d3e50;
+      margin-bottom: 1.5rem;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-avatar {
+      background: #1e3c72;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .client-info h4 {
+      font-weight: 600;
+      color: #1e3c72;
+    }
+
+    .client-info p {
+      font-size: 0.85rem;
+      color: #6f7d8c;
+    }
+
+    /* contact / cta */
+    .contact-section {
+      background: linear-gradient(135deg, #1e3c72 0%, #153155 100%);
+      color: white;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .contact-left h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-left p {
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-details i {
+      width: 30px;
+      color: #aac8ff;
+    }
+
+    .contact-details span {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-right {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      padding: 2.5rem;
+      border-radius: 30px;
+      min-width: 320px;
+      flex: 1 1 350px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-right h3 {
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 40px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .form-group textarea {
+      border-radius: 20px;
+      resize: vertical;
+    }
+
+    .contact-right .btn {
+      background-color: white;
+      color: #1e3c72;
+      width: 100%;
+      font-weight: 600;
+    }
+
+    .contact-right .btn:hover {
+      background-color: #f0f4ff;
+    }
+
+    /* footer */
+    footer {
+      background-color: #0f263b;
+      color: #b0c6da;
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col .logo {
+      color: white;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      justify-content: flex-start;
+    }
+
+    .footer-col .logo i {
+      color: #7cb342;
+    }
+
+    .footer-col p {
+      font-size: 0.95rem;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col ul li a {
+      color: #b0c6da;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      background: #1e3c72;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background: #2b5e3b;
+      transform: scale(1.1);
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #1d3852;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* mobile adjustments */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .about-stats {
+        justify-content: center;
+      }
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .contact-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-details span {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <i class="fas fa-tree"></i> ProCV Lebanon
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Success</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">Get started</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Land your dream job <span>in Lebanon</span> & abroad</h1>
+        <p>Professional CV writing, cover letters & LinkedIn optimisation by native recruiters who know the Lebanese market.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">Free consultation</a>
+          <a href="#services" class="btn btn-outline">See services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-file-alt"></i> <!-- simple CV icon -->
+      </div>
+    </div>
+  </section>
+
+  <!-- trust indicators -->
+  <div class="trust-bar">
+    <div class="container trust-logos">
+      <span><i class="fas fa-check-circle" style="color:#2b5e3b;"></i> 500+ CVs crafted</span>
+      <span><i class="fas fa-calendar-alt"></i> 8+ years experience</span>
+      <span><i class="fas fa-map-pin"></i> Beirut & remote</span>
+      <span><i class="fas fa-star" style="color:#ce1126;"></i> 98% client satisfaction</span>
+    </div>
+  </div>
+
+  <!-- services section -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">CV services made for Lebanon</h2>
+      <p class="section-subtitle">We know what Lebanese recruiters look for — and what international firms expect from Lebanese candidates.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-file-pen"></i></div>
+          <h3>Professional CV writing</h3>
+          <p>Tailored to your industry (banking, NGO, tech, healthcare, construction …). ATS-friendly, modern design.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Cover letter & LinkedIn</h3>
+          <p>Matching cover letter and LinkedIn profile optimisation to attract headhunters in Lebanon and the Gulf.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Executive & fresh grad</h3>
+          <p>From entry-level to C-suite – we adapt your narrative. Native English, French & Arabic options.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Interview coaching</h3>
+          <p>Mock interviews with real feedback, plus negotiation tips for the Lebanese job market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about us / lebanon roots -->
+  <section id="about" class="section" style="background-color: #f6f9ff;">
+    <div class="container about-grid">
+      <div class="about-content">
+        <h2>We speak Lebanese recruiter</h2>
+        <p>ProCV Lebanon was founded by former HR managers from Beirut’s top banks and NGOs. We don’t just write – we bridge the gap between your experience and what local employers want.</p>
+        <p>Every CV is reviewed with the Lebanese job market in mind: remote work trends, diaspora returns, and the specific certifications valued in Lebanon.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">97%</div>
+            <div class="stat-label">interview calls</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.9★</div>
+            <div class="stat-label">client rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">30+</div>
+            <div class="stat-label">industries</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn">Talk to a consultant</a>
+      </div>
+      <div class="about-image">
+        <i class="fas fa-cedar"></i> <!-- fallback tree icon (FontAwesome doesn't have cedar specifically) -->
+        <i class="fas fa-mountains" style="font-size: 12rem; color: #2b5e3b; opacity: 0.5;"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- testimonials -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">Success stories from Lebanon</h2>
+      <p class="section-subtitle">Real clients who landed roles at top employers.</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">“After 6 months of no calls, ProCV rewrote my CV and I got 3 interviews in two weeks. I'm now at a leading bank in Beirut. Worth every penny.”</p>
+          <div class="client">
+            <div class="client-avatar">RZ</div>
+            <div class="client-info">
+              <h4>Rami Z.</h4>
+              <p>Credit analyst, Bank Audi</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">“I needed a CV for a remote tech job. They highlighted my freelance projects perfectly. Got hired by a Dubai-based startup.”</p>
+          <div class="client">
+            <div class="client-avatar">MJ</div>
+            <div class="client-info">
+              <h4>Maria J.</h4>
+              <p>UX designer, Cloud10</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">“The LinkedIn rewrite made me visible to recruiters. I now get messages weekly. Merci ProCV!”</p>
+          <div class="client">
+            <div class="client-avatar">KA</div>
+            <div class="client-info">
+              <h4>Karim A.</h4>
+              <p>Project manager, UN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact / consultation -->
+  <section id="contact" class="contact-section section">
+    <div class="container contact-flex">
+      <div class="contact-left">
+        <h2>Get your free consultation</h2>
+        <p>Lebanon‑based? Let’s meet over coffee (or WhatsApp). We’ll analyse your CV and suggest improvements with no obligation.</p>
+        <div class="contact-details">
+          <span><i class="fas fa-phone-alt"></i> +961 3 456 789</span>
+          <span><i class="fas fa-envelope"></i> hello@procvlebanon.com</span>
+          <span><i class="fas fa-map-marker-alt"></i> Hamra, Beirut (online everywhere)</span>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3>Send a quick message</h3>
+        <form action="#" method="post">
+          <div class="form-group">
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone (optional)">
+          </div>
+          <div class="form-group">
+            <textarea rows="3" placeholder="Tell us about your industry or goals..."></textarea>
+          </div>
+          <button type="submit" class="btn">Request callback</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo">
+          <i class="fas fa-tree"></i> ProCV Lebanon
+        </div>
+        <p>Your career, our expertise.<br>CV writing tailored to Lebanon.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">CV writing</a></li>
+          <li><a href="#">Cover letters</a></li>
+          <li><a href="#">LinkedIn profile</a></li>
+          <li><a href="#">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright container">
+      <p>© 2025 ProCV Lebanon — professional CV writing services in Lebanon. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
